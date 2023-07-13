@@ -21,9 +21,15 @@ public class Application {
 		Cat tom = new Cat("Tom", 5, 7.0);
 		Dog fido = new Dog("Fido", 10, 20.0);
 
-		ad.saveAnimal(fido);
-		ad.saveAnimal(tom);
+//		ad.saveAnimal(fido);
+//		ad.saveAnimal(tom);
 
+		ad.findDogByIdAndUpdateName(19, "Bruno");
+		ad.findByIdAndDelete(20);
+
+		ad.findAllCats().forEach(c -> System.out.println(c));
+		
+		ad.findDogByName("Fido").forEach(d -> System.out.println(d));
 
 		em.close();
 		emf.close();
